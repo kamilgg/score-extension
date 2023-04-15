@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "Score",
+  "version": "0.0.1",
+  "description": "Transactions are safe now.",
+
+  "browser_action": {
+     "default_popup": "index.html",
+     "default_title": "Score"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://etherscan.io/address/*"],
+      "js": ["explorers/etherscan.js"]
+    },
+    {
+      "matches": ["*://ftmscan.com/address/*"],
+      "js": ["explorers/otherscan.js"]
+    },
+    {
+      "matches": ["*://bscscan.com/address/*"],
+      "js": ["explorers/otherscan.js"]
+    },
+    {
+      "matches": ["*://arbiscan.io/address/*"],
+      "js": ["explorers/otherscan.js"]
+    },
+    {
+      "matches": ["*://optimistic.etherscan.io/address/*"],
+      "js": ["explorers/otherscan.js"]
+    }
+  ],
+  "permissions": [
+    "notifications",
+    "alarms",
+    "storage",
+    "background",
+    "webRequest",
+    "webRequestBlocking",
+    "activeTab",
+    "*://etherscan.io/*",
+    "*://ftmscan.com/*",
+    "*://bscscan.com/*",
+    "*://arbiscan.io/*",
+    "*://optimistic.etherscan.io/*"
+  ]
+}
